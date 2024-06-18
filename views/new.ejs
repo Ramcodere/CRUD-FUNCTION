@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+   
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">New Product Form</h1>
+        <form action="/products" method="POST" class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="naam">Name:</label>
+                        <input type="text" name="name" id="naam" class="form-control" required>
+                        <div class="invalid-feedback">Please enter a name.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="img">Image:</label>
+                        <input type="text" name="img" id="img" class="form-control" required>
+                        <div class="invalid-feedback">Please enter an image URL.</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="text" name="price" id="price" class="form-control" required>
+                        <div class="invalid-feedback">Please enter a price.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="desc">Description:</label>
+                        <textarea name="desc" id="desc" class="form-control" rows="5" required></textarea>
+                        <div class="invalid-feedback">Please enter a description.</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+
+</body>
+</html>
