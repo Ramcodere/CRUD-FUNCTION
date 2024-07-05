@@ -21,7 +21,7 @@ This project is a simple backend service providing CRUD (Create, Read, Update, D
 - Node.js
 - Express.js
 - MongoDB (Mongoose)
-- nodemon (for development)
+- Nodemon (for development)
 
 ## Installation
 
@@ -30,13 +30,13 @@ This project is a simple backend service providing CRUD (Create, Read, Update, D
 - MongoDB
 
 ### Steps
-1. Clone the repository
+1. Clone the repository:
     ```bash
     git clone https://github.com/Ramcodere/CRUD-FUNCTION.git
     cd CRUD-FUNCTION
     ```
 
-2. Install dependencies
+2. Install dependencies:
     ```bash
     npm install
     ```
@@ -53,3 +53,6 @@ This will start the server.
 Product Management
 1. Add New Product: Open http://localhost:8080/products/new in your browser. This page allows you to upload a new product.
 2. View and Manage Products: Open http://localhost:8080/products in your browser. This page displays all products and allows you to edit, view, and delete them.
+3. Viewing Products: To view the list of products, navigate to /products by typing http://localhost:8080/products in your browser.
+4. Adding a New Product: To add a new product, navigate to /products/new by typing http://localhost:8080/products/new in your browser.
+
