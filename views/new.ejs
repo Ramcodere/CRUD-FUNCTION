@@ -4,13 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New Product Form</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; 
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
    
-    <div class="container mt-5">
+    <div class="container form-container">
         <h1 class="text-center mb-4">New Product Form</h1>
         <form action="/products" method="POST" class="needs-validation" novalidate>
             <div class="row">
@@ -23,7 +36,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="img">Image:</label>
+                        <label for="img">Image URL:</label>
                         <input type="text" name="img" id="img" class="form-control" required>
                         <div class="invalid-feedback">Please enter an image URL.</div>
                     </div>
@@ -49,12 +62,12 @@
     
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Add Product</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Add Product</button>
                 </div>
             </div>
         </form>
     </div>
-    
 
+    
 </body>
 </html>

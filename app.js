@@ -1,65 +1,35 @@
+
+
 const express = require('express');
 const app = express(); 
 const path = require('path');
 const mongoose = require('mongoose');
-const seedDB = require('./seed')
 const methodOverride = require('method-override');
 const productRoutes = require('./routes/product');
-const authRoutes = require('./routes/auth');
-const passport = require('passport');
-const LocalStrategy = require('passport-local');
-const User = require('./models/User');
-const session = require('express-session');
 
-
-let configSesion = {
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false,
-  };
-
-
-
-
+// Connect to MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/AprilProject')
-.then(()=>{console.log("db connected")})
-.catch((err)=>{console.log("Error is:", err)})
+  .then(() => {
+    console.log("Database connected");
+  })
+  .catch((err) => {
+    console.error("Error connecting to database:", err);
+  });
 
-app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname , 'views'))
+// Set up view engine and static files
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Middleware for parsing request bodies and method override
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
-app.use(express.urlencoded({extended:true}))
-app.use(methodOverride('_method'))
-
-
-
-// expess-session middleware -
-app.use(session(configSesion));
-
-// seedDB();
-
-
-
-app.use(passport.initialize());  
-app.use(passport.session());     
-
-// CHANGE: USE "createStrategy" INSTEAD OF "authenticate"
-// passport.use(User.createStrategy()); 
-passport.serializeUser(User.serializeUser());  
-passport.deserializeUser(User.deserializeUser());   
-
-// use static authenticate method of model in LocalStrategy
-passport.use(new LocalStrategy(User.authenticate()));
-
-
-//Routes
+// Routes
 app.use(productRoutes);
-app.use(authRoutes);
 
-
+// Start server
 const PORT = 8080;
-app.listen(PORT , ()=>{
-    console.log(`server is connected at port: ${PORT}`);
-})
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});

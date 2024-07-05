@@ -4,31 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Page</title>
-    <!-- Bootstrap CSS -->
+    <title>Show Product</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    
-
     <div class="container mt-5">
-        <h1 class="text-center">Displaying a particular product</h1>
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
+        <h1 class="text-center mb-4">Displaying a Particular Product</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
                 <div class="card">
+                    <img src="<%= foundProduct.img %>" class="card-img-top" alt="<%= foundProduct.name %>" style="height: 300px; object-fit: cover;">
                     <div class="card-body">
                         <h2 class="card-title"><%= foundProduct.name %></h2>
-                        <img src="<%= foundProduct.img %>" alt="" class="card-img-top" style="height: 300px; object-fit: cover;">
-                        <div class="card-text">
-                            <h3><%= foundProduct.price %></h3>
-                            <p><%= foundProduct.desc %></p>
-                        </div>
+                        <p class="card-text"><%= foundProduct.desc %></p>
+                        <h3 class="text-center"><%= foundProduct.price %></h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
 </body>
-</html>
+</html> 
+
